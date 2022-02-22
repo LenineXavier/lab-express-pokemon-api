@@ -7,6 +7,14 @@ const allPokemon = require("./data");
 
 const app = express();
 
+//preprarando servidor para recber json
+app.use(express.json());
+
+const crudRouter = require("./routes/crud");
+app.use("/crud", crudRouter)
+
+
+
 // -- Define your route listeners here! --
 
 app.listen(PORT, () => console.log(`Server up and running at port ${PORT}`));
